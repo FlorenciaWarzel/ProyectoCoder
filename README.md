@@ -6,7 +6,7 @@ de lo que trata, un trailer de la misma y su rating. <br>
 Además podrás encontrar una sección con las plataformas donde podrás <br>
 acceder a las películas deseadas.</p>
 <p>Cuenta con una sección de Inicio que dara una vista de lo que es el sitio; <br>
-Movedades, donde se cargaran las novedades más recientes de las peliculas que se estrenarán <br>
+Novedades, donde se cargaran las novedades más recientes de las peliculas que se estrenarán <br>
 próximamente, o aquellas las cuales se encuentran en desarrollo;<br>
 Peliculas, que contiene un menú desplegable donde encontrarás:</p>
 <ul>
