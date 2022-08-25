@@ -2,7 +2,7 @@
 <hr>
 <p>Bienvenidos a nuestro proyecto "Coder Movie", un blog de reseñas de peliculas<br>
 donde podrás encontrar la pelicula que desees ver, un breve resumen <br>
-de lo que trata, un trailer de la misma y la su rating. <br>
+de lo que trata, un trailer de la misma y su rating. <br>
 Además podrás encontrar una sección con las plataformas donde podrás <br>
 acceder a las películas deseadas.</p>
 <p>Cuenta con una sección de Inicio que dara una vista de lo que es el sitio; <br>
