@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block title %}PELICULAS{% endblock %}
+{% load static %}
+{% block body %}
+    <h1 align="center" style="color: #cccccc">Subir Reseña</h1>
+
+    <form class="row g-3" action="" method="POST"  enctype="multipart/form-data">
+
+   {% csrf_token %}
+
+        {{ peliculas_form.as_p }}
+      <span style="margin-bottom: 10px;"><button class="btn btn-dark btn-lg rounded-pill" type="submit" value="Enviar">Enviar</button></span>
+    </form>
+
+
+
+
+{% endblock %}

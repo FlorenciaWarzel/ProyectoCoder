@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block title %}BUSCAR{% endblock %}
+{% block body %}
+    {% load static %}
+<section style=" background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;">
+<h1 align="center" style="color: #ffffff; padding-top: 15px;">BUSCAR PELICULAS</h1>
+
+   <div align="center" style="margin: 40px;"> <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ my_form.as_p }}
+
+        <button class="btn btn-dark btn-lg rounded-pill" type="submit" value="Buscar por nombre">Buscar</button>
+
+    </form></div>
+<hr size="10"> <div class="container-fluid" >
+    <div style="justify-content: center;">
+    {% for pelicula in peliculas %}
+     <div class="container"><h2 class="animate__animated animate__zoomIn">{{ pelicula.name}} ({{ pelicula.year }})<img align="top" style="border-radius: 13px; float: right;" src="{{ pelicula.image.url }}"></h2>
+        <p><b>{{ pelicula.synopsis }} </b></p>
+        <button type="button"  class="btn-danger"><b> Calificación:  {{ pelicula.rating }} </b><span style="padding-bottom: 20px;"><img width="25px" src="{% static 'AppCoder/assets/Starpng-PNG-Photos.png' %}" alt="..."> </span></button>
+     </div>
+        <div align="center" style="margin-top: 100px; padding-bottom: 100px"><iframe width="680" height="360" src="{{ pelicula.trailer }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>
+        </div>
+        </div>
+</section>
+    {% endfor %}
+{% endblock %}
