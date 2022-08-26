@@ -11,20 +11,20 @@ próximamente, o aquellas las cuales se encuentran en desarrollo;<br>
 Peliculas, que contiene un menú desplegable donde encontrarás:</p>
 <ul>
 <li>Ver Todo (Aún está en proceso de edición de estilos): aquí podrás ver todas las peliculas cargadas en el sitio. 
-En cada una podrás interactuar, ya que posee dos botones, uno para ver la ficha info de la película, y oto que te
-redigirá a una nueva pestaña y podrás disfrutar de su trailer.</li>
+En cada una podrás interactuar, ya que posee dos botones, uno para ver la ficha info de la película, y otro que te
+redirigirá a una nueva pestaña y podrás disfrutar de su trailer.</li>
 <li>Plataformas: podrás ver las plataformas disponibles en Internet
 para poder visualizar las peliculas de forma gratuita.</li>
 <li>Buscar: Aquí podrás buscar las peliculas por nombre. 
 Y devolverá todos los datos de las mismas.</li>
 <li>Crear Reseña (Aún está en proceso de edición de estilos): En esta sección se pueden cargar las reseñas que se deseen. Cabe 
 aclarar que en donde pide el link del trailer, se debe ir al video deseado, y seleccionar
-la opción de "embeber", copiar el enlace https que aparece luego de "src=", es decir -- > **https://www.youtube.com/embed/f3XbMyXuEGE**".
+la opción de "embeber", copiar el enlace https que aparece luego de "src=", es decir -- > **https://www.youtube.com/embed/xxxxxxxxxxxxxxx**".
 Una vez cargados todos los datos, serás redigirido a la sección donde se encuentran todas las películas.</li>
 </ul>
-<p>En la sección nosotros, se desplegarán las opciones:</p>
+<p>En la sección Nosotros, se desplegarán las opciones:</p>
 <ul>
-<li>Conocemos: donde se encontrará una reseña acerca de los integrantes de este proyecto.</li>
+<li>Conocenos: donde se encontrará una reseña acerca de los integrantes de este proyecto.</li>
 <li>Contacto: se encontraran nuestros medios de contacto, como así un formulario.</li>
 </ul>
 <hr>
