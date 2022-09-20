@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block title %}REGISTRO{% endblock %}
+{% block body %}
+    <h1 align="center" style="color: #cccccc">REGISTRO</h1>
+    <div align="center" style="margin: 0; padding: 0; width: 100%;"> <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+        <button class="btn btn-dark btn-lg rounded-pill" type="submit" value="Buscar por nombre">Registrarse</button>
+
+    </form></div>
+    {% endblock %}

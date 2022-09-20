@@ -632,6 +632,11 @@ progress {
   color: #6c757d;
 }
 
+footer .container-fluid{
+  padding-right: 0;
+  padding-left: 0;
+}
+
 .container,
 .container-fluid,
 .container-xxl,

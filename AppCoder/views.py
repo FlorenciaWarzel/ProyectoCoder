@@ -1,6 +1,7 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
-from AppCoder.models import Peliculas
 from AppCoder.forms import BuscarPelicula, PeliculasForm
+from AppCoder.models import Peliculas
 
 
 # Create your views here.
@@ -18,12 +19,14 @@ def buscar_peliculas(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         buscar_pelicula = Peliculas.objects.filter(name__icontains=name)
-
     context = {
         "my_form": BuscarPelicula(),
         'peliculas': buscar_pelicula,
     }
+
+
     return render(request, "AppCoder/peliculas/buscar.html", context)
+
 
 
 def leer_peliculas(request):
@@ -134,3 +137,5 @@ def nosotros(request):
 
 def plataformas(request):
     return render(request, "AppCoder/plataformas/plataformas.html")
+
+
