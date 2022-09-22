@@ -2,7 +2,7 @@
 {% block title %}VER TODO{% endblock %}
 {% load static %}
 {% block body %}
-<h1 align="center" style="color: #cccccc">Listado de películas</h1>
+<h1 align="center" style="color: #cccccc; text-shadow: 0.1em 0.02em #2c3034;">Listado de películas</h1>
     {% if peliculas %}
        {% for pelicula in peliculas %}
            <!-- Section-->
@@ -37,7 +37,7 @@
                                        <div class="modal-dialog">
                                            <div class="modal-content" style="background-image: linear-gradient(to right, #434343 0%, black 100%);">
                                                <div class="modal-header">
-                                                   <h5 class="modal-title" id="exampleModalLabel" style="color: #f0f0f0;">{{ pelicula.name }}</h5>
+                                                   <h5 class="modal-title" id="id_username" style="color: #f0f0f0;">{{ pelicula.name }}</h5>
                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                </div>
                                                <div class="modal-body" style="background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);">
@@ -47,7 +47,9 @@
                                                    <p><span style="font-size: medium; color: #4f5050;"><b>Rating: {{ pelicula.rating }}</b></span> <span style="padding-bottom: 20px;"><img width="25px" src="{% static 'AppCoder/assets/Starpng-PNG-Photos.png' %}" alt="..."></span></p>
                                                </div>
                                                <div class="modal-footer">
-                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-secondary" ><a style="color: #f0f0f0; text-decoration: none;" href="{% url 'AppEliminar' pelicula.id %}">Eliminar</a> </button>
+                                                    <button type="button" class="btn btn-secondary" ><a style="color: #f0f0f0; text-decoration: none;" title="Esta función se encontrará disponible próximamente.">Editar</a> </button>
                                                </div>
                                            </div>
                                        </div>
@@ -62,21 +64,24 @@
                        <div class="modal-content">
                            <div class="modal-header">
                                <h5 class="modal-title" id="exampleModalLabel">{{ pelicula.name }}</h5>
-                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar" ></button>
+
                            </div>
                            <div class="modal-body" >
                                <p><iframe id="iframeVideo" width="100%" height="315" src="{{ pelicula.trailer }}"> </iframe></p>
                            </div>
                            <div class="modal-footer">
                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                             </div>
                            </div>
                        </div>
                    </div>
-               </div>
+
            </section>
        {% endfor %}
     {% else %}
-        <h4 style="color: #cccccc;">No hay películas para mostrar por ahora :(</h4>
+        <h4 style="color: #cccccc;">No hay películas para mostrar por ahora:(</h4>
 {% endif %}
 
 

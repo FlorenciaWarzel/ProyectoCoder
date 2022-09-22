@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block title %}PELICULAS{% endblock %}
+{% load static %}
+{% block body %}
+
+
+    <div style="margin: 13px; ">
+    <div class="container" align="center"  style= "width: 70%; border: solid  3px #2c3034; box-shadow: 0.5em 0.5em  black;  border-radius: 13px; background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;">
+    <h1 align="center" style="color: #cccccc; text-shadow: 0.1em 0.1em #2c3034;">EDITAR RESEÑA</h1>
+<form action=""  class="form-inline" style="width: 70%;" method="POST" enctype="multipart/form-data">
+   {% csrf_token %}
+    {{ peliculas_form.as_p }}
+    <button style="box-shadow: 0px 0px 15px 5px grey" type="submit" class="btn btn-dark mb-2">Actualizar</button>
+</form>
+    </div></div>
+
+
+
+
+{% endblock %}

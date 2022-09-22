@@ -2,15 +2,31 @@
 {% block title %}PELICULAS{% endblock %}
 {% load static %}
 {% block body %}
-    <h1 align="center" style="color: #cccccc">Subir Reseña</h1>
-
-    <form class="row g-3" action="" method="POST"  enctype="multipart/form-data">
-
+    <div style="margin: 13px; ">
+    <div class="container" align="center"  style= "width: 70%; border: solid  3px #2c3034; box-shadow: 0.5em 0.5em  black;  border-radius: 13px; background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;">
+    <h1 align="center" style="color: #cccccc; text-shadow: 0.1em 0.1em #2c3034;">CREAR RESEÑA</h1>
+<form action="" class="form-inline" style="width: 70%;" method="POST" enctype="multipart/form-data">
    {% csrf_token %}
+ <label class="sr-only" for="inlineFormInputGroupUsername1" style="color:#cccccc;font-weight: bold;">Título</label>
 
-        {{ peliculas_form.as_p }}
-      <span style="margin-bottom: 10px;"><button class="btn btn-dark btn-lg rounded-pill" type="submit" value="Enviar">Enviar</button></span>
-    </form>
+    <input type="text" class="form-control" id="inlineFormInputGroupUsername1" name="name">
+
+<label class="sr-only" for="inlineFormInputName2" style="color:#cccccc;  font-weight: bold;">Reseña</label>
+    <textarea type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="synopsis"></textarea>
+<label class="sr-only" for="inlineFormInputName3" style="color:#cccccc;  font-weight: bold;">Año</label>
+<input type="number" class="form-control mb-2 mr-sm-2" id="inlineFormInputName3" name="year">
+    <label class="sr-only" for="inlineFormInputName4" style="color:#cccccc;  font-weight: bold;">Género</label>
+<input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName4" name="gener">
+    <label class="sr-only" for="inlineFormInputName4" style="color:#cccccc;  font-weight: bold;">Portada</label>
+<input type="file" class="form-control mb-2 mr-sm-2" id="inlineFormInputName4" name="image" alt="Imagen">
+    <label class="sr-only" for="inlineFormInputName5" style="color:#cccccc;  font-weight: bold;">Trailer</label>
+<input type="url" class="form-control mb-2 mr-sm-2" id="inlineFormInputName5" name="trailer">
+    <label class="sr-only" for="inlineFormInputName6" style="color:#cccccc;  font-weight: bold;">Calificación</label>
+<input type="number" class="form-control mb-2 mr-sm-2" id="inlineFormInputName6" name="rating">
+    <button style="box-shadow: 0px 0px 15px 5px grey" type="submit" class="btn btn-dark mb-2">Crear</button>
+</form>
+    </div></div>
 
 
 

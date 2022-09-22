@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 
 
@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect
 
 # Vistas "Registro"
 from UserCoder.forms import UserRegisterForm
+from UserCoder.models import Avatar
 
 
 def login_request(request):
@@ -37,12 +38,14 @@ def login_request(request):
 
 def registro(request):
     if request.method == 'POST':
-        #form = UserCreationForm(request.POST)
-        form = UserRegisterForm(request.POST)
+
+        form = UserRegisterForm(request.POST, request.FILES)
 
         if form.is_valid():
 
-            form.save()
+            user= form.save()
+            avatar = Avatar(user=user, imagen=form.cleaned_data.get('imagen'))
+            avatar.save()
 
             messages.info(request, 'El usuario fue correctamente creado.')
         else:
@@ -51,7 +54,11 @@ def registro(request):
         return redirect('AppInicio')
 
     context = {
-        #'form': UserCreationForm()
+
         'form': UserRegisterForm()
+
     }
-    return render(request, "UserCoder/login.html", context)
+    return render(request, "UserCoder/registro.html", context)
+
+# Vistas Logout
+

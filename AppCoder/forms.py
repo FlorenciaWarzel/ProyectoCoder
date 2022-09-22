@@ -1,5 +1,5 @@
 from django import forms
-from django.db import models
+
 
 
 class BuscarPelicula(forms.Form):
@@ -14,8 +14,3 @@ class PeliculasForm(forms.Form):
     image = forms.ImageField()
     trailer = forms.URLField()
     rating = forms.FloatField()
-
-class Registro(models.Model):
-    user = models.CharField(max_length=40)
-    password = models.CharField(max_length=600)
-    email = models.EmailField()

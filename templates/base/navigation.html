@@ -1,0 +1,58 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+               <a class="navbar-brand" href="{% url 'AppInicio' %}"><img id="logo-coder" width="150px" src="{% static 'AppCoder/css/images/Coder Movie.png' %}"/> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'AppInicio' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{%  url 'AppNovedades' %}">Novedades</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Películas</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{%  url 'AppLeer' %}">Ver todo</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'AppPlataformas'  %}">Plataformas</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'AppBuscar'  %}">Buscar</a></li>
+                                {%  if user.is_authenticated %}
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'AppCrear'  %}">Crear Reseña</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{%  url 'AppNosotros' %}">Conocenos</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'AppContacto'  %}">Contacto</a></li>
+                            </ul>
+                        </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                        {%  if user.is_authenticated %}
+                            <li ><a class="dropdown-item">{{ user.get_username }} <img align="right" style="border-radius: 50%" width="25px" height="30px" src="{{ user.avatar.imagen.url }}" alt=""></a> </li>
+                             <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="{% url 'UserLogout'  %}">Logout </a></li>
+
+
+                            {% else %}
+                             <li ><a  class="dropdown-item" href="{% url 'UserRegistro'  %}">Registrate</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                             <li ><a class="dropdown-item" href="{% url 'UserLogin'  %}">Login</a></li>
+
+                            {% endif %}
+
+                        </ul>
+                    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>

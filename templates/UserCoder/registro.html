@@ -1,13 +1,17 @@
 {% extends "index.html" %}
 {% block title %}REGISTRO{% endblock %}
 {% block body %}
-    <h1 align="center" style="color: #cccccc">REGISTRO</h1>
-    <div align="center" style="margin: 0; padding: 0; width: 100%;"> <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-
+     <div style="margin: 13px; ">
+    <div class="container" align="center"  style= "width: 80%; border: solid  3px #2c3034; box-shadow: 0.5em 0.5em  black;  border-radius: 13px; background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;">
+    <h1 align="center" style="color: #cccccc; text-shadow: 0.1em 0.1em #2c3034;">REGISTRO</h1>
+<form action="" class="form-inline" style="width: 50%;" method="POST" enctype="multipart/form-data">
+   {% csrf_token %}
     {{ form.as_p }}
+    <button style="box-shadow: 0px 0px 15px 5px grey" type="submit" class="btn btn-dark mb-2">Registrarse</button>
+</form>
+    </div></div>
 
-        <button class="btn btn-dark btn-lg rounded-pill" type="submit" value="Buscar por nombre">Registrarse</button>
 
-    </form></div>
+
     {% endblock %}

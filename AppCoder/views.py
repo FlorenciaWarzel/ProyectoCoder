@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from AppCoder.forms import BuscarPelicula, PeliculasForm
 from AppCoder.models import Peliculas
@@ -24,9 +25,7 @@ def buscar_peliculas(request):
         'peliculas': buscar_pelicula,
     }
 
-
     return render(request, "AppCoder/peliculas/buscar.html", context)
-
 
 
 def leer_peliculas(request):
@@ -36,7 +35,7 @@ def leer_peliculas(request):
     }
     return render(request, 'AppCoder/peliculas/leer_peliculas.html', context)
 
-
+@login_required
 def crear_pelicula(request):
     if request.method == 'POST':
         my_form = PeliculasForm(request.POST, files=request.FILES)
@@ -58,9 +57,24 @@ def crear_pelicula(request):
 
     return render(request, 'AppCoder/peliculas/crear.html', context)
 
+@login_required
+def grabar_pelicula(request):
+    if request.method == 'POST':
+        my_form = PeliculasForm(request.POST)
+        if my_form.is_valid():
+            data = my_form.cleaned_data
 
-def editar_pelicula(request, nombre):
-    pelicula = Peliculas.objects.get(name=nombre)
+            pelicula_data = Peliculas(name=data.get('name'), synopsis=data.get('synopsis'), year=data.get('year'),
+                                      gener=data.get('gener'), image=data.get('image'), trailer=data.get('trailer'),
+                                      rating=data.get("rating"))
+            pelicula_data.save()
+
+    return redirect('AppLeer')
+
+@login_required
+def editar_pelicula(request, id):
+    pelicula = Peliculas.objects.get(id=id)
+
     if request.method == 'POST':
         my_form = PeliculasForm(request.POST, files=request.FILES)
         if my_form.is_valid():
@@ -76,45 +90,30 @@ def editar_pelicula(request, nombre):
 
             pelicula.save()
 
-            return redirect('AppLeer')
+        return redirect('AppLeer')
 
-    peliculas_form = PeliculasForm(initial={'name': pelicula.name, 'synopsis': pelicula.synopsis, 'year': pelicula.year, 'gener': pelicula.gener, 'image': pelicula.image, 'trailer': pelicula.trailer, 'rating': pelicula.rating})
+    peliculas_form = PeliculasForm(initial={'name': pelicula.name, 'synopsis': pelicula.synopsis, 'year': pelicula.year, 'gener': pelicula.gener,
+                     'image': pelicula.image, 'trailer': pelicula.trailer, 'rating': pelicula.rating})
 
     context = {
 
         'peliculas_form': peliculas_form
     }
-    return render(request, 'AppCoder/peliculas/actualizar_peliculas.html', context)
+    return render(request, 'AppCoder/peliculas/editar.html', context)
 
 
+@login_required
+def eliminar_pelicula(request, id):
+    pelicula = Peliculas.objects.get(id=id)
+    pelicula.delete()
 
-# def eliminar_pelicula(request, nombre):
-#     pelicula = Peliculas.objects.get(name=nombre)
-#     pelicula.delete()
-#
-#     return redirect('AppLeer')
+    # peliculas = Peliculas.objects.all()
 
+    # context = {
+    #     'peliculas': peliculas
+    # }
 
-# def peliculas(request):
-#     if request.method == 'POST':
-#         my_form = PeliculasForm(request.POST, files=request.FILES)
-#         if my_form.is_valid():
-#             data = my_form.cleaned_data
-#
-#             pelis_data = Peliculas(name=data.get('name'), synopsis=data.get('synopsis'), year=data.get('year'),
-#                                    gener=data.get('gener'), image=data.get('image'), trailer=data.get('trailer'),
-#                                    rating=data.get("rating"))
-#             pelis_data.save()
-#         else:
-#             redirect('AppInicio')
-#
-#     peliculas = Peliculas.objects.all()
-#
-#     context = {
-#         'movies': peliculas,
-#         'my_form': PeliculasForm()
-#     }
-#     return render(request, "AppCoder/peliculas/peliculas.html", context)
+    return redirect('AppLeer')
 
 
 # Vistas "Novedades"
@@ -137,5 +136,3 @@ def nosotros(request):
 
 def plataformas(request):
     return render(request, "AppCoder/plataformas/plataformas.html")
-
-

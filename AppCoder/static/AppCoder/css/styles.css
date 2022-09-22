@@ -108,8 +108,11 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 
+
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
+  text-shadow: 0.1em 0.02em #2c3034;
+  color: #cccccc;
 }
 @media (min-width: 1200px) {
   h1, .h1 {
@@ -258,7 +261,7 @@ samp {
 }
 
 img #logo-coder {
-  widows: 150px;
+  width: 150px;
   height: 150px;
 }
 
@@ -4523,6 +4526,7 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  min-height: 100%;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
