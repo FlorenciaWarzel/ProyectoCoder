@@ -11,13 +11,13 @@ próximamente, o aquellas las cuales se encuentran en desarrollo;<br>
 Peliculas, que contiene un menú desplegable donde encontrarás:</p>
 <ul>
 <li>Ver Todo (Aún está en proceso de edición de estilos): aquí podrás ver todas las peliculas cargadas en el sitio. 
-En cada una podrás interactuar, ya que posee dos botones, uno para ver la ficha info de la película, y otro que te
+En cada una podrás interactuar, ya que posee dos botones, uno para ver la ficha info de la película, además de poseer dos botones, uno para eliminar la reseña y otro para editarla (próximamente), y otro que te
 redirigirá a una nueva pestaña y podrás disfrutar de su trailer.</li>
 <li>Plataformas: podrás ver las plataformas disponibles en Internet
 para poder visualizar las peliculas de forma gratuita.</li>
 <li>Buscar: Aquí podrás buscar las peliculas por nombre. 
 Y devolverá todos los datos de las mismas.</li>
-<li>Crear Reseña (Aún está en proceso de edición de estilos): En esta sección se pueden cargar las reseñas que se deseen. Cabe 
+<li>Crear Reseña: En esta sección se pueden cargar las reseñas que se deseen. Cabe 
 aclarar que en donde pide el link del trailer, se debe ir al video deseado, y seleccionar
 la opción de "embeber", copiar el enlace https que aparece luego de "src=", es decir -- > **https://www.youtube.com/embed/xxxxxxxxxxxxxxx**".
 Una vez cargados todos los datos, serás redigirido a la sección donde se encuentran todas las películas.</li>
@@ -27,10 +27,15 @@ Una vez cargados todos los datos, serás redigirido a la sección donde se encue
 <li>Conocenos: donde se encontrará una reseña acerca de los integrantes de este proyecto.</li>
 <li>Contacto: se encontraran nuestros medios de contacto, como así un formulario.</li>
 </ul>
+Además cuenta con la opción de Registro y Log In, para poder realizar las subidas de reseña, asi también como eliminar aquellas que consideres. Una vez que terminaste, puedes darle a Log Out!
+<hr>
+
+<h1>Video 📼</h1>
+Un video de nuestra de nuestra aplicación:
+<a href="https://drive.google.com/file/d/1zR-zoQeS9oEl5CL2OwqGu6bpBAxryJrp/view?usp=sharing">https://drive.google.com/file/d/1zR-zoQeS9oEl5CL2OwqGu6bpBAxryJrp/view?usp=sharing</a>
 <hr>
 <h1>Aclaraciones 🔖</h1>
-<p>Existen vistas creadas, pero que aún no se han puesto en funcionamiento, por ejemplo: para editar o eliminar 
-películas. Quedan pendientes esas funcionalidades para la próxima actualización.</p>
+<p>Existen vistas creadas, pero que aún no se han puesto en funcionamiento, por ejemplo: para editar películas. Queda pendiente esa funcionalidad para la próxima actualización.</p>
 <hr>
 <h1>Requisitos ⚙️</h1>
 <p style="color: #13653f">python3 <br>
@@ -44,9 +49,9 @@ tzdata==2022.2 <br></p>
 <h1>Autores ✒️</h1>
 
 <ul>
-<li type="square">Florencia Antonella Warzel 👩‍🦰</li>
-<li type="square">Fernando Machado 👨</li>
-<li type="square">Fernando Díaz Rivera Varela 👨</li>
+<li type="square">Florencia Antonella Warzel 👩‍🦰 --> CSS y Maquetado de templates. También realizó la AppUser.</li>
+<li type="square">Fernando Machado 👨 --> Realizo la AppCoder (models y formularios).</li>
+<li type="square">Fernando Díaz Rivera Varela 👨 --> Realizo la AppCoder (vistas y urls).</li>
 </ul>
 
 <hr>
