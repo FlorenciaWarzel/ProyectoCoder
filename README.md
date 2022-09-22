@@ -31,7 +31,7 @@ Además cuenta con la opción de Registro y Log In, para poder realizar las subi
 <hr>
 
 <h1>Video 📼</h1>
-Un video de nuestra de nuestra aplicación:
+Un video de muestra de nuestra aplicación:
 <a href="https://drive.google.com/file/d/1zR-zoQeS9oEl5CL2OwqGu6bpBAxryJrp/view?usp=sharing">https://drive.google.com/file/d/1zR-zoQeS9oEl5CL2OwqGu6bpBAxryJrp/view?usp=sharing</a>
 <hr>
 <h1>Aclaraciones 🔖</h1>
